@@ -12,7 +12,18 @@ public class PayrollCalculato {
         System.out.println("whats your pay rate?: ");
         float payRate = scanner.nextFloat();
         float grossPay = hoursWorked * payRate;
-        System.out.printf("%s because you worked %.2f hours and your hourly wage is %.2f your gross pay is  %.2f",name,hoursWorked,payRate,grossPay);
+
+
+        if (hoursWorked > 40){
+            float overTime = (float) (1.5 * (hoursWorked-40));
+            grossPay = payRate* 40 + overTime;
+            System.out.printf("becuase you worked over 40 hours your new pay is %.2f",grossPay);
+
+
+        }
+        else{
+            System.out.printf("%s because you worked %.2f hours and your hourly wage is %.2f your gross pay is  %.2f%n",name,hoursWorked,payRate,grossPay);
+        }
 
 
 
